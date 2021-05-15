@@ -18,7 +18,7 @@ for face_locations in face_locations:
     right = face_locations[1]
     bottom = face_locations[2]
     left = face_locations[3]
-    draw.rectangle(((left, top),(right,bottom)),outline=(255,255,0),width=4)
+    draw.rectangle(((left, top),(right,bottom)), outline=(255,255,0), width=4) #width는 굵기
 
 face_image.show()
 
