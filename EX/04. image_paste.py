@@ -10,7 +10,7 @@ face_image_np = face_recognition.load_image_file(face_image_path)
 face_image = Image.fromarray(face_image_np)
 
 mask_image = Image.open(mask_image_path)
-mask_image = mask_image.resize((60, 50))
+mask_image = mask_image.resize((60, 50)) #마스크 이미지 사이즈 재설정
 
 face_image.paste(mask_image, (55, 60), mask_image)
 face_image.show()
