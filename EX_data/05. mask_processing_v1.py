@@ -1,5 +1,15 @@
 # 얼굴 영역 정보를 이용한 마스크 합성
+#face_recognition
+"""
+Returns an array of bounding boxes of human faces in a image
 
+:param img: An image (as a numpy array)
+:param number_of_times_to_upsample: How many times to upsample the image looking for faces. Higher numbers find smaller faces.
+:param model: Which face detection model to use. "hog" is less accurate but faster on CPUs. "cnn" is a more accurate
+deep-learning model which is GPU/CUDA accelerated (if available). The default is "hog".
+
+:return: A list of tuples of found face locations in css (top, right, bottom, left) order
+"""
 import face_recognition
 from PIL import Image, ImageDraw
 

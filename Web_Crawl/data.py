@@ -1,11 +1,10 @@
-'''     리팩토리 과정(최종버전)
+''' 리팩토리 과정(최종버전)
 데이터 파트
 다운로드 기능(without_out, with_mask, mask)
 마스크 합성
 데이터 생성
 '''
 #데이터 파트
-# 데이터 파트
 from urllib.request import Request, urlopen
 import json
 import os
@@ -13,7 +12,6 @@ import os
 import face_recognition
 from PIL import Image, ImageDraw
 import numpy as np
-
 
 # 다운로드 기능(without_mask, with_mask, mask)
 def download_image(kind):
@@ -44,6 +42,7 @@ def download_image(kind):
             image_file.close()
             print('without_mask 이미지 다운로드 중(' + str(i + 1) + '/' + str(len(contents)) + '): ' + content['name'])
         print('without_mask 이미지 다운로드 완료')
+
     elif kind == 'with_mask':
         api_url = 'https://api.github.com/repos/prajnasb/observations/contents/experiements/data/with_mask?ref=master'
         hds = {'User-Agent': 'Mozilla/5.0'}
@@ -134,6 +133,7 @@ def mask_processing(face_image_file_name):
 
     # 마스크 합성
     for face_landmark in face_landmarks:
+
         if ('nose_bridge' not in face_landmark) or ('chin' not in face_landmark):
             continue
         # 마스크 너비 보정값
