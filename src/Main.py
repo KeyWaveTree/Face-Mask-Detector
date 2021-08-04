@@ -23,7 +23,7 @@ def video_processing(video_path, background):
 
     out = None
 
-    colors = [(0, 255, 0), (0, 0, 255)]
+    colors = [(0, 255, 0), (0, 0, 255)] # 마스크0(0)->초록 마스크x(1)->빨강 컬러값 (BGR순서임)
     labels = ['with_mask', 'without_mask']
 
     while cap.isOpened():
@@ -100,3 +100,4 @@ def video_processing(video_path, background):
 
 if __name__ == '__main__':
     video_processing('Data/04.mp4', True)
+# 과적합되면 오히려 부작용이 생김 (2번씩 계속 학습해서 모의고사 문제를 다 외워버리는 수준이 되면 모의고사 문제는 잘 풀지만 나머지는 잘 못푸는 현상이 발생할 수 있음

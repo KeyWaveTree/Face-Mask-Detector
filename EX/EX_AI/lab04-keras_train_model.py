@@ -16,6 +16,7 @@ train_dataset = tf.keras.preprocessing.image_dataset_from_directory(
     batch_size=16
 )
 
+#수능 본시험 느낌 #평가 단계
 valid_dataset = tf.keras.preprocessing.image_dataset_from_directory(
     '../Data/',
     validation_split=0.2,
