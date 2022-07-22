@@ -45,7 +45,8 @@ def create_model():
         model = tf.keras.applications.MobileNet(
             input_shape=(224, 224, 3),
             include_top=False,
-            weights='imagenet'
+            #가중치
+            weights='imagenet',
         )
 
         model.trainable = False
