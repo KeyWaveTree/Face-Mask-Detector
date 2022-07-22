@@ -6,8 +6,6 @@
       <excludeFolder url="file://$MODULE_DIR$/EX/EX_AI" />
       <excludeFolder url="file://$MODULE_DIR$/EX/EX_data" />
       <excludeFolder url="file://$MODULE_DIR$/EX/Web_Crawl" />
-      <excludeFolder url="file://$MODULE_DIR$/src/Data" />
-      <excludeFolder url="file://$MODULE_DIR$/logs" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.8 (face-mask)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
