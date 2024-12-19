@@ -14,7 +14,7 @@ def load_data():
         validation_split=0.2,
         subset='training',
         seed=123,
-        image_size=(224, 224),
+          image_size=(224, 224),
         batch_size=16
     )#모의고사
 

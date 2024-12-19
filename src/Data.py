@@ -4,9 +4,9 @@
 마스크 합성
 데이터 생성
 '''
-#데이터 파트
-from urllib.request import Request, urlopen
-import json
+#Data Part
+from urllib.request import Request, urlopen #request and open using url
+import json #Why using json?
 import os
 
 import face_recognition
@@ -14,10 +14,11 @@ from PIL import Image, ImageDraw
 import numpy as np
 
 
-# 다운로드 기능(without_mask, with_mask, mask)
+# DownLode Function(without_mask, with_mask, mask)
 def download_image(kind):
     if kind == 'without_mask':
-        api_url = 'https://api.github.com/repos/prajnasb/observations/contents/experiements/data/without_mask?ref=master'
+        api_url = 'https://api.github.com/repos/prajnasb/observations/' \
+                  'contents/experiements/data/without_mask?ref=master'
         hds = {'User-Agent': 'Mozilla/5.0'}
 
         request = Request(api_url, headers=hds)
@@ -44,6 +45,7 @@ def download_image(kind):
             image_file.close()
             print('without_mask 이미지 다운로드 중(' + str(i + 1) + '/' + str(len(contents)) + '): ' + content['name'])
         print('without_mask 이미지 다운로드 완료')
+
     elif kind == 'with_mask':
         api_url = 'https://api.github.com/repos/prajnasb/observations/contents/experiements/data/with_mask?ref=master'
         hds = {'User-Agent': 'Mozilla/5.0'}
@@ -72,6 +74,7 @@ def download_image(kind):
             image_file.close()
             print('with_mask 이미지 다운로드 중(' + str(i + 1) + '/' + str(len(contents)) + '): ' + content['name'])
         print('with_mask 이미지 다운로드 완료')
+
     elif kind == 'mask':
         mask_image_download_url = 'https://github.com/prajnasb/observations/raw/master/mask_classifier/Data_Generator/images/blue-mask.png'
 
@@ -88,12 +91,11 @@ def download_image(kind):
         print('mask 이미지 다운로드 완료')
 
 
-# 점과 점 사이의 거리
+# 점과 점 사이의 거리(Distance of point and point)
 def distance_point_to_point(point1, point2):
     return np.sqrt((point1[0] - point2[0]) ** 2 + (point1[1] - point2[1]) ** 2)
 
-
-# 점과 직선 사이의 거리
+# 점과 직선 사이의 거리(Distance of Point and Line)
 def distance_point_to_line(point, line_point1, line_point2):
     if line_point1[0] == line_point2[0]:
         return np.abs(point[0] - line_point1[0])
